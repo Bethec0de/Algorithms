@@ -6,8 +6,8 @@ import org.junit.Before;
 import java.util.Random;
 
 /**
- * @author 42six, a CSC Company <BR>
- *         Created  8/18/13 2:01 PM<BR>
+ * @author JT <BR>
+ *   Added 18 Oct 2021<BR>
  */
 public class MergeSortTest {
 
