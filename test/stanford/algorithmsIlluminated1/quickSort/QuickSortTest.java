@@ -27,8 +27,10 @@ public class QuickSortTest {
         long lastInt = Integer.MIN_VALUE;
         for(long currentInt : input){
             Assert.assertTrue(currentInt>=lastInt);
-            //System.out.println("current:" + currentInt + " - last:" + lastInt);
-            lastInt = currentInt;
+            if(currentInt>=1 && lastInt >=1) {
+                System.out.println("current:" + currentInt + " - last:" + lastInt);
+                lastInt = currentInt;
+            }
         }
     }
 

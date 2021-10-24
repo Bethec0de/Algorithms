@@ -5,6 +5,7 @@ import com.google.common.primitives.Longs;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -28,12 +29,21 @@ public class QuickSort {
         }
     }
 
+    public static int getRandomSeed(int end){
+        Random generator = new Random();
+        generator.setSeed(0);
+        int randomInt = Integer.MIN_VALUE;
+        randomInt = generator.nextInt(end);
+        return randomInt;
+    }
+
     /*partition around the last element in the array into 2 arrays
     where array 1 has all elements less than the pivot and array 2
     has all elements greater
     * */
     private static int partition(long[] arr, int begin, int end) {
-        long pivot = arr[end];
+        long pivot = getRandomSeed(end);
+        //System.out.printf("In Partition and the seed is %s \n", pivot);
         int i = (begin-1);
 
         for (int j = begin; j < end; j++) {
