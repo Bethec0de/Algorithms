@@ -8,20 +8,21 @@ package algorithms.interviews;
  * To change this template use File | Settings | File Templates.
  */
 
-import algorithms.interviews.AlgorithmFixture;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 
 public class AlgorithmFixtureTest {
 
     private AlgorithmFixture fixture;
-    private String stringToReverse = "Now is the time for all good men to come to the aide of their country.";
-    private String stringWithAsciiSpaces = "Now%20is%20the%20time%20for%20all%20good%20men%20to%20come%20to%20the%20aide%20of%20their%20country.";
-    private String orderReversed = ".yrtnuoc rieht fo edia eht ot emoc ot nem doog lla rof emit eht si woN";
-    private String uniqueCharactersPositive = "swarmed";
-    private String stringToCompress = "aaabcccccddeefffffffggg";
-    private String compressedString = "a3b1c5d2e2f7g3";
-    private String noCompressionString = "abcdefg";
+    private final String stringToReverse = "Now is the time for all good men to come to the aide of their country.";
+    private final String stringWithAsciiSpaces = "Now%20is%20the%20time%20for%20all%20good%20men%20to%20come%20to%20the%20aide%20of%20their%20country.";
+    private final String orderReversed = ".yrtnuoc rieht fo edia eht ot emoc ot nem doog lla rof emit eht si woN";
+    private final String uniqueCharactersPositive = "swarmed";
+    private final String stringToCompress = "aaabcccccddeefffffffggg";
+    private final String compressedString = "a3b1c5d2e2f7g3";
+    private final String noCompressionString = "abcdefg";
 
 
     @Before
@@ -39,8 +40,8 @@ public class AlgorithmFixtureTest {
 
     @Test
     public void TestStringHasAllUniqueCharacters(){
-        Assert.assertTrue("Expected:true - Got:" +  String.valueOf(fixture.StringHasAllUniqueCharacters(uniqueCharactersPositive)),fixture.StringHasAllUniqueCharacters(uniqueCharactersPositive));
-        Assert.assertFalse("Expected:true - Got:" +  String.valueOf(fixture.StringHasAllUniqueCharacters(uniqueCharactersPositive)),fixture.StringHasAllUniqueCharacters(stringToReverse));
+        Assert.assertTrue("Expected:true - Got:" + fixture.StringHasAllUniqueCharacters(uniqueCharactersPositive),fixture.StringHasAllUniqueCharacters(uniqueCharactersPositive));
+        Assert.assertFalse("Expected:true - Got:" + fixture.StringHasAllUniqueCharacters(uniqueCharactersPositive),fixture.StringHasAllUniqueCharacters(stringToReverse));
     }
 
     @Test

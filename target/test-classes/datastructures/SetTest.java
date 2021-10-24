@@ -14,40 +14,40 @@ public class SetTest {
     private Set fixture;
     private Object[] fixtureContents;
     private int modCapacity;
-    private String testObject = "Hello";
+    private final String testObject = "Hello";
 
 
     @Before
     public void setUp() {
         initialCapacity = 0;
-        fixtureContents = fixture.create();
+        fixtureContents = Set.create();
         modCapacity = 7;
     }
 
     @Test
     public void testCreate() {
-        Assert.assertEquals(fixture.capacity(), initialCapacity);
+        Assert.assertEquals(Set.capacity(), initialCapacity);
     }
 
     @Test
     public void testCreateWithCapacity() {
-        Assert.assertEquals(fixture.capacity(), initialCapacity);
-        fixtureContents = fixture.createWithCapacity(modCapacity);
-        Assert.assertEquals(fixture.capacity(), modCapacity);
+        Assert.assertEquals(Set.capacity(), initialCapacity);
+        fixtureContents = Set.createWithCapacity(modCapacity);
+        Assert.assertEquals(Set.capacity(), modCapacity);
     }
 
     @Test
     public void testAdd() {
-        Assert.assertEquals(fixture.capacity(), initialCapacity);
-        fixture.add(testObject);
-        Assert.assertEquals(fixture.capacity(), initialCapacity+1);
+        Assert.assertEquals(Set.capacity(), initialCapacity);
+        Set.add(testObject);
+        Assert.assertEquals(Set.capacity(), initialCapacity+1);
     }
 
     @Test
     public void testRemove() {
         testAdd();
-        fixture.remove(testObject);
-        Assert.assertEquals(fixture.capacity(), initialCapacity);
+        Set.remove(testObject);
+        Assert.assertEquals(Set.capacity(), initialCapacity);
     }
 
     @Test
