@@ -31,7 +31,7 @@ Input: )( Return: 2
 
         }
         catch(Exception ex){
-            System.out.printf("Testcase failed with %s:%s", ex.toString(), ex.getMessage());
+            System.out.printf("Testcase failed with %s:%s", ex, ex.getMessage());
             ex.printStackTrace();
         }
     }

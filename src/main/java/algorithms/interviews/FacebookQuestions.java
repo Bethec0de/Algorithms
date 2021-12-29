@@ -11,7 +11,7 @@ Input: ()) Return: 1
 Input: (()) Return: 0
 Input: )( Return: 2
 */
-    //todo:Fails on usecase for 2 because of the order of open and closed parens
+    //todo:Fails on usecase for ')(' because of the order of open and closed parens
     public int returnNumberToBalance(String input){
         int returnCounter = 0;
         int countOPen= 0, countClosed = 0;
