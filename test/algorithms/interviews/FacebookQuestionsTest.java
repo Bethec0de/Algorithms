@@ -25,13 +25,13 @@ Input: )( Return: 2
             fixtureReturn2 = ")(";
             fixtureReturn3 = "(((";
             Assert.assertEquals(0,fixture.returnNumberToBalance(fixtureReturn0));
+            Assert.assertEquals(3,fixture.returnNumberToBalance(fixtureReturn3));
             Assert.assertEquals(1,fixture.returnNumberToBalance(fixtureReturn1));
             Assert.assertEquals(2,fixture.returnNumberToBalance(fixtureReturn2));
-            Assert.assertEquals(3,fixture.returnNumberToBalance(fixtureReturn3));
 
         }
         catch(Exception ex){
-            System.out.printf("Testcase failed with %:%", ex.getMessage());
+            System.out.printf("Testcase failed with %s:%s", ex, ex.getMessage());
             ex.printStackTrace();
         }
     }

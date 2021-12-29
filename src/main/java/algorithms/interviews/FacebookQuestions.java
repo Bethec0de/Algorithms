@@ -1,6 +1,7 @@
 package algorithms.interviews;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class FacebookQuestions {
 /*
@@ -14,23 +15,24 @@ Input: )( Return: 2
     public int returnNumberToBalance(String input){
         int returnCounter = 0;
         int countOPen= 0, countClosed = 0;
-
-        for (char c : input.toCharArray()){
-            //evaluate how many need to be added to balance
-            if(c == ')'){
-                countOPen++;
-            }else{
-                countClosed++;
-            }
-        }
-        if(countOPen == countClosed){
+        Stack<Character> workingStack = new Stack<>();
+        if (input == ""){
             return 0;
         }
-        if(countOPen > countClosed){
-            return countOPen-countClosed;
-        }else{
-            return countClosed - countOPen;
+        for (char c : input.toCharArray()){
+            //evaluate how many need to be added to balance
+            if(c == '(') {
+                workingStack.push(c);
+                returnCounter++;
+            }
+            else{
+                if(!workingStack.isEmpty()){
+                    workingStack.pop();
+                }
+                returnCounter--;
+            }
         }
+        return Math.abs(returnCounter);
     }
 
     /*
